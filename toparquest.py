@@ -1,4 +1,3 @@
-#!wget https://opig.stats.ox.ac.uk/webapps/newsabdab/sabdab/archive/all_nano/
 import Bio.PDB
 import numpy
 input_dir = ""
@@ -6,8 +5,8 @@ input_dir = ""
 
 
 
-def analyse_PDB(file):  # 计算PDB的结合位点
-    # 检查文件名
+def analyse_PDB(file):  # Calculation of binding sites for PDB
+    # check filename
     print()
     parser = Bio.PDB.PDBParser()
     pdb_name = file[0:4]
@@ -22,7 +21,7 @@ def analyse_PDB(file):  # 计算PDB的结合位点
 
     nanobody_list = []
     antigen_list = []
-    # 简单筛选COMPND 记录
+    # Simple filtering of COMPND records
     for item in compnds:
         # print(item)
         if 'spike' in item['molecule']:
@@ -50,16 +49,16 @@ def analyse_PDB(file):  # 计算PDB的结合位点
                 print(nanobody_list,antigen_list)
                 print(f"The current parameters are: {pdb_name}-{antigen_char}-{nanobody_char}")
                 exit()
-            # 查找抗体和抗原之间的接触面积
+            # Find the contact area between antibody and antigen
             ns = Bio.PDB.NeighborSearch(list(antigen.get_atoms()))
             contact_residues = []
             paratope_seq = ''
             sequence = ''
             for residue in nanobody:
-                if Bio.PDB.is_aa(residue.get_resname(), standard=True):  # 判断是否是氨基酸
+                if Bio.PDB.is_aa(residue.get_resname(), standard=True):  # Determine whether it is an amino acid
                     sequence += Bio.PDB.Polypeptide.three_to_one(residue.get_resname())
                     for atom in residue.get_atoms():
-                        close_atoms = ns.search(atom.coord, 4.5, level='A')  # 定义接触面积的阈值为4.5埃
+                        close_atoms = ns.search(atom.coord, 4.5, level='A')  # The threshold defining the contact area is 4.5 Å
                         if len(close_atoms) > 0:
                             paratope_seq += Bio.PDB.Polypeptide.three_to_one(residue.get_resname())
                             contact_residues.append(residue)
@@ -84,5 +83,5 @@ def analyse_PDB(file):  # 计算PDB的结合位点
 
 if __name__ == '__main__':
     # random_cut((0.8, 0.1, 0.1))
-    print(analyse_PDB('8gz5.pdb'))
+    print(analyse_PDB('8gz5.pdb'))  # sample file
     pass
