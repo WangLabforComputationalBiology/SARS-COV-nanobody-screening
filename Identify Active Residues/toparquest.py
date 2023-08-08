@@ -40,7 +40,7 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
     temp_combined=[]
     for antigen_char in antigen_list:
         for nanobody_char in nanobody_list:
-            # 获取纳米抗体和抗原的链
+            # Acquire nanobodies and antigen chains
             try:
                 nanobody = structure[0][nanobody_char.strip()]
                 antigen = structure[0][antigen_char.strip()]
