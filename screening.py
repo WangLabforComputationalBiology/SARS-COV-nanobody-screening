@@ -2,7 +2,7 @@ import os
 import shutil
 
 def copyfile_base_keyword_in_file(file_pathname):
-    # 遍历该目录下的所有文件
+    # Traverse all files in this directory
     for filename in os.listdir(file_pathname):
         path = os.path.join(file_pathname, filename)
         with open(path, 'r') as f:
@@ -13,11 +13,11 @@ def copyfile_base_keyword_in_file(file_pathname):
                     dst_file_path = os.path.join(to_dir_path, filename)
                     shutil.copy(src_file_path, dst_file_path)
 
-# 指定要查找的文件夹路径
+# Specify the folder path to look for
 file_pathname = r'E:\Download\all_structures\SARS-COV'
 
-# 指定要复制到的目标文件夹路径
+# Specify the destination folder path to copy to
 to_dir_path = r'E:\Download\all_structures\SARS-COV nanobody'
 
-# 调用函数，查找含有关键字的文件并复制到目标文件夹中
+# Call the function to find the file containing the keyword and copy it to the target folder
 copyfile_base_keyword_in_file(file_pathname)
