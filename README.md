@@ -5,8 +5,8 @@ Screening of Nanobodies against SARS-Cov-2 and Identification of Active Residues
 # Usage
   ## Download Data
     The required data can be downloaded from the respective database:
-      ·Download the sample PDB file (8GZ5.pdb) :  http://www.nanolas.cloud/download/pdb/8GZ5.pdb
-      ·To search and download data "PDBID.pdb".
+      ·Download the sample PDB file: http://www.nanolas.cloud/download/pdb/8GZ5.pdb
+      
       
    
   ## Identify Active Residues
