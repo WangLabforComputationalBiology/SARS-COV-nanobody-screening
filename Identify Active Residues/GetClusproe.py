@@ -10,7 +10,6 @@ input_dir = ""
 # output_dir = ""
 
 def analyse_PDB(file):  
-    # 检查文件名
     print()
     parser = Bio.PDB.PDBParser()
     pdb_name = file[0:4]
