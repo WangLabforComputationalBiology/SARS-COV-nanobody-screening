@@ -1,12 +1,13 @@
 # SARS-COV-nanobody-screening
 Screening of Nanobodies against SARS-Cov-2 and Identification of Active Residues
-#Description
 
-#Usage
+# Description
+
+# Usage
  
-#Download Data
+# Download Data
 
-#Data Preprocessing
+# Data Preprocessing
 
-#Identifying Active Residues
+# Identifying Active Residues
 
