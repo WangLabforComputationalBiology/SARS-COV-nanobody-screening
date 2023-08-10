@@ -1,32 +1,32 @@
+#------------------------------
+# This is a code for searching the active residues in antigen chain.
+# The mark with”-” for non-active residues.
+# Output the ID of the active residues in [...], followed by their total number.
+#------------------------------
 #!wget https://opig.stats.ox.ac.uk/webapps/newsabdab/sabdab/archive/all_nano/
 import Bio.PDB
 import numpy
 input_dir = ""
 # output_dir = ""
 
-#？改：原子量更大的--设为抗原链
-
-def analyse_PDB(file):  # 计算PDB的结合位点
+def analyse_PDB(file):  
     # 检查文件名
     print()
     parser = Bio.PDB.PDBParser()
     pdb_name = file[0:4]
     structure = parser.get_structure(pdb_name, file)
 
-#########################################
-####获取两条链-原子量更大的--设为抗原链 #######
-#########################################
     chains = list(structure.get_chains())
     antigen_output = []
     nanobody_list = []
 
-    # antigen_output 输出链    另一条结合链
+ # Judging by the chain length: the longer one is the antigen chain,and another is the nanobody.
     if len(chains[0]) < len(chains[1]):
-        nanobody_list.append(chains[0].get_id())# 原子量更大的链
-        antigen_output.append(chains[1].get_id())# 原子量更小的链
+        nanobody_list.append(chains[0].get_id())
+        antigen_output.append(chains[1].get_id())
     else:
-        nanobody_list.append(chains[1].get_id())# 原子量更大的链
-        antigen_output.append(chains[0].get_id())# 原子量更小的
+        nanobody_list.append(chains[1].get_id())
+        antigen_output.append(chains[0].get_id())
 
 
     sequences = []
@@ -34,7 +34,7 @@ def analyse_PDB(file):  # 计算PDB的结合位点
     temp_combined=[]
     for antigen_char in nanobody_list:
         for nanobody_char in antigen_output:
-            # 获取纳米抗体和抗原的链
+            # Acquire nanobodies and antigen chains
             try:
                 nanobody = structure[0][nanobody_char.strip()]
                 antigen = structure[0][antigen_char.strip()]
@@ -43,16 +43,16 @@ def analyse_PDB(file):  # 计算PDB的结合位点
                 print(antigen_output,nanobody_list)
                 print(f"The current parameters are: {pdb_name}-{antigen_char}-{nanobody_char}")
                 exit()
-            # 查找抗体和抗原之间的接触面积
+            # Find the binding site between nanobody and antigen
             ns = Bio.PDB.NeighborSearch(list(antigen.get_atoms()))
             contact_residues = []
             paratope_seq = ''
             sequence = ''
             for residue in nanobody:
-                if Bio.PDB.is_aa(residue.get_resname(), standard=True):  # 判断是否是氨基酸
+                if Bio.PDB.is_aa(residue.get_resname(), standard=True):  
                     sequence += Bio.PDB.Polypeptide.three_to_one(residue.get_resname())
                     for atom in residue.get_atoms():
-                        close_atoms = ns.search(atom.coord, 4.5, level='A')  # 定义接触面积的阈值为4.5埃
+                        close_atoms = ns.search(atom.coord, 4.5, level='A')   # Set the threshold to 4.5 Å
                         if len(close_atoms) > 0:
                             paratope_seq += Bio.PDB.Polypeptide.three_to_one(residue.get_resname())
                             contact_residues.append(residue)
@@ -77,6 +77,6 @@ def analyse_PDB(file):  # 计算PDB的结合位点
     return sequences, label_lists, temp_combined
 
 if __name__ == '__main__':
-    # random_cut((0.8, 0.1, 0.1))
-    print(analyse_PDB('model.000.00.pdb'))
+
+    print(analyse_PDB('modl.pdb'))
     pass
