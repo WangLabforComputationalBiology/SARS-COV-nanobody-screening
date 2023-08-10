@@ -3,7 +3,8 @@
 # The mark with”-” for non-active residues.
 # Output the ID of the active residues in [...], followed by their total number.
 #------------------------------
-#!wget https://opig.stats.ox.ac.uk/webapps/newsabdab/sabdab/archive/all_nano/
+
+
 import Bio.PDB
 import numpy
 input_dir = ""
