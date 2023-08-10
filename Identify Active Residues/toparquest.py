@@ -4,7 +4,6 @@ input_dir = ""
 # output_dir = ""
 
 
-
 def analyse_PDB(file):  # Calculation of binding sites for PDB
     # check filename
     print()
@@ -48,7 +47,7 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
                 print(nanobody_list,antigen_list)
                 print(f"The current parameters are: {pdb_name}-{antigen_char}-{nanobody_char}")
                 exit()
-            # Find the contact area between antibody and antigen
+            # Find the contact area between nanobody and antigen
             ns = Bio.PDB.NeighborSearch(list(antigen.get_atoms()))
             contact_residues = []
             paratope_seq = ''
@@ -81,6 +80,6 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
     return sequences, label_lists, temp_combined
 
 if __name__ == '__main__':
-    # random_cut((0.8, 0.1, 0.1))
+
     print(analyse_PDB('8gz5.pdb'))  # sample file
     pass
