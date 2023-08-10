@@ -1,7 +1,7 @@
 #------------------------------
 # This is a code for searching the active residues in nanobody chain.
 # The mark with”-” for non-active residues.
-# Output the ID of the active residue in [...], followed by their total number.
+# Output the ID of the active residues in [...], followed by their total number.
 #------------------------------
 import Bio.PDB
 import numpy
