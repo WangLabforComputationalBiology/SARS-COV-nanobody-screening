@@ -8,7 +8,7 @@ Screening of Nanobodies against SARS-Cov-2 and Identification of Active Residues
       -To download the data from database：
       ·Visit the RCSB website at https://www.rcsb.org/
       ·To search and download data by enter "SARS-CoV-2, nanobody" as the keyword.
-      ·On the detailed information page, you will find options to download the data associated with the entry.
+      
    
   ## Identify Active Residues
 
