@@ -15,6 +15,6 @@ Nanobodies, also known as VHHs or Nbs, are single-domain antibodies derived from
       
    Make sure to put **toparquest.py** and **8gz5.pdb** in the same directory.
 
-   Run toparquest.py，In the output,the ID of the active residues are in [...]
+   Run toparquest.py, In the output, the ID of the active residues are in `[...]`.
     
     
