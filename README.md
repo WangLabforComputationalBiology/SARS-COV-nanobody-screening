@@ -7,7 +7,5 @@ Introducing a method for analyzing the active residues of nanobodies,which invol
   ## Download Data
 The required data can be downloaded from the respective database or can be obtained using the sample data provided.
 
-  ## Data Preprocessing
-
   ## Identifying Active Residues
 
