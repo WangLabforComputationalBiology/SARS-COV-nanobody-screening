@@ -51,7 +51,7 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
                 print(nanobody_list,antigen_list)
                 print(f"The current parameters are: {pdb_name}-{antigen_char}-{nanobody_char}")
                 exit()
-            # Find the contact area between nanobody and antigen
+            # Find the binding site between nanobody and antigen
             ns = Bio.PDB.NeighborSearch(list(antigen.get_atoms()))
             contact_residues = []
             paratope_seq = ''
@@ -60,7 +60,7 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
                 if Bio.PDB.is_aa(residue.get_resname(), standard=True):  # Determine whether it is an amino acid
                     sequence += Bio.PDB.Polypeptide.three_to_one(residue.get_resname())
                     for atom in residue.get_atoms():
-                        close_atoms = ns.search(atom.coord, 4.5, level='A')  # The threshold defining the contact area is 4.5 Å
+                        close_atoms = ns.search(atom.coord, 4.5, level='A')  # Set the threshold to 4.5 Å
                         if len(close_atoms) > 0:
                             paratope_seq += Bio.PDB.Polypeptide.three_to_one(residue.get_resname())
                             contact_residues.append(residue)
