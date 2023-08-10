@@ -10,5 +10,5 @@ Introducing a method for analyzing the active residues of nanobodies,which invol
       ·To search and download data by enter "SARS-CoV-2, nanobody" as the keyword.
       ·On the detailed information page, you will find options to download the data associated with the entry.
    
-  ## Identifying Active Residues
+  ## Identify Active Residues
 
