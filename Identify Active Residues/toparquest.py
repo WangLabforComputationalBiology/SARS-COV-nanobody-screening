@@ -21,9 +21,8 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
 
     nanobody_list = []
     antigen_list = []
-    # Simple filtering of COMPND records
+
     for item in compnds:
-        # print(item)
         if 'spike' in item['molecule']:
             nanobody_list.extend([s[0] if len(s) > 1 else s for s in item['chain'].upper().split(', ')])
             pass
