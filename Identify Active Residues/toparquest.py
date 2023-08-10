@@ -21,7 +21,7 @@ def analyse_PDB(file):  # Calculation of binding sites for PDB
 
     nanobody_list = []
     antigen_list = []
-
+#Localization of Spike chain and nanobody chain in COMPND
     for item in compnds:
         if 'spike' in item['molecule']:
             nanobody_list.extend([s[0] if len(s) > 1 else s for s in item['chain'].upper().split(', ')])
