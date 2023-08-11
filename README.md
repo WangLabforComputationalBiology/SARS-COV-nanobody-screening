@@ -23,6 +23,7 @@ Nanobodies, also known as VHHs or Nbs, are single-domain antibodies derived from
      · Identify Active Residues/GetClusproe.py
 
   Download the sample PDB:
+  
      * The modl.pdb is a conformation of the Spike protein (antigen) bound with a nanobody.
      * It is used to identify the active residues of the Spike protein. The file does not contain COMPND sections.
      · Sample PDB/modl.pdb
