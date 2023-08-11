@@ -7,7 +7,7 @@ Nanobodies, also known as VHHs or Nbs, are single-domain antibodies derived from
    The required data can be downloaded from the respective database:
    
        *'8GZ5' is the PDBID，it can be replaced with other anti-SARS-Cov-2 nanobodies.
-       *Please note that the ID needs to be capitalized when downloading using the following link.
+       * Please note that the ID needs to be capitalized when downloading using the following link.
        · Download the sample PDB file: http://www.nanolas.cloud/download/pdb/8GZ5.pdb   
 
    
