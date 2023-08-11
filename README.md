@@ -22,5 +22,5 @@ Nanobodies, also known as VHHs or Nbs, are single-domain antibodies derived from
    
      · Identify Active Residues/GetClusproe.py
 
-  If there are no full header, title, and compnd sections in the PDB file，**GetClusproe.py** can also identify Active Residues.
+  If there are no full **HEADER**, **TITLE**, and **COMPND** sections in the PDB file，**GetClusproe.py** can also identify Active Residues.
     
