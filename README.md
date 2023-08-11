@@ -28,5 +28,5 @@ Nanobodies, also known as VHHs or Nbs, are single-domain antibodies derived from
      * It is used to identify the active residues of the Spike protein. The file does not contain COMPND sections.
      · Download Sample PDB/modl.pdb
 
-  If there are no full **COMPND** sections in the PDB file，**GetClusproe.py** can also identify Active Residues.
+  Make sure to put **GetClusproe.py** and **modl.pdb** in the same directory.
     
