@@ -14,13 +14,13 @@ Nanobodies, also known as VHHs or Nbs, are single-domain antibodies derived from
   ### Active Residues of nanobodies
    Download the code: 
    
-      · Download Identify Active Residues/toparquest.py
+      · Download Identify_Active_Residues/toparquest.py
       
    Make sure to put **toparquest.py** and **8gz5.pdb** in the same directory.
    ### Active Residues of antigens
    Download the code: 
    
-     · Download Identify Active Residues/GetClusproe.py
+     · Download Identify_Active_Residues/GetClusproe.py
 
   Download the sample PDB:
   
